@@ -407,10 +407,10 @@ dump_lib (char *fnoutput)
   //TODO: CHECK IF I NEED to add sizelm3 here
 
   uint32_t id  = sizemagic+sizelm1+sizelm2+120;
-  uint32_t nid = sizemagic+sizelm1+sizelm2+sizeam1+180;
-  uint32_t ntd = sizemagic+sizelm1+sizelm2+sizeam1+sizeam2+240;
+  uint32_t nid = sizemagic+sizelm1+sizelm2+sizeam1+181;
+  uint32_t ntd = sizemagic+sizelm1+sizelm2+sizeam1+sizeam2+241;
 
-  uint32_t prevhint = sizemagic+sizelm1+sizelm2+sizeam1+sizeam2+sizeam3+300; 
+  uint32_t prevhint = sizemagic+sizelm1+sizelm2+sizeam1+sizeam2+sizeam3+301;
   uint32_t prevhelp=0;
 
   /* SHORT IMPORT LIBRARY ARCHIVE MEMBERS */
