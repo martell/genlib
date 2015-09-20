@@ -423,7 +423,12 @@ dump_lib (char *fnoutput)
     prevhint += prevhelp;
     exp->hint = BYTESWAP32(prevhint);
     exp->data = prevhint;
-    prevhelp = 60 + 20 + strlen(exp->name) + strlen(dll_name) + 2 + 1;
+    prevhelp = 60 + 20 + strlen(exp->name) + strlen(dll_name) + 2;
+    uint32_t d_imp_size = strlen(exp->name) + strlen(dll_name) + 2;
+    if (d_imp_size % 2 != 0)
+    {
+      prevhelp++;
+    }
   }
 
 
