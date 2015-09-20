@@ -115,6 +115,7 @@ static const char usage_string[] =
 "   or: genlib [options...] infile.def liboutfile.a\n"
 "   -a arch            Set the target architecture\n"
 "   -o output          Set the output library name\n"
+"   -d dllname         Set the input dll name\n"
 "   -V                 Print version and exit\n"
 "Usage example:\n"
 "  By default, the output file is named after the DLL counterpart\n"
@@ -130,6 +131,7 @@ static const char version_string[] =
 static const struct option long_options[] = {
     { "arch",    required_argument, NULL, 'a' },
     { "output",  required_argument, NULL, 'o' },
+    { "dllname", required_argument, NULL, 'd' },
     { "version", no_argument,       NULL, 'v' },
     { NULL, 0, NULL, 0 }
 };
@@ -181,6 +183,9 @@ int main(int argc, char *argv[])
     case 'o':
       output_name = xstrdup(optarg);
       break;
+    case 'd':
+      dll_name = xstrdup(optarg);
+      break;
     case 'v':
       printf("%s", version_string);
       return 0;
@@ -205,7 +210,6 @@ int main(int argc, char *argv[])
     return 1;
   }
 
- 
   if (load_def(argv[optind])) {
     dump_def ();
     dump_lib (output_name);
