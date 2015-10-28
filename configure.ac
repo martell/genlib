@@ -60,6 +60,7 @@ AC_TYPE_UINT8_T
 # rpl_malloc. By this linkage could fail on cross-compiles.
 #AC_FUNC_MALLOC
 AC_CHECK_FUNCS([memset strdup strrchr strlwr])
+AC_CHECK_LIB([m], [floor])
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
